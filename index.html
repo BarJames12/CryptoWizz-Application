@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>CryptoWizz || Live Crypto Currency</title>
+  <link rel="icon" type="image/jpg" href="./Photos/investment.png" />
+  <!----  SweetAlert   ---->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!----  FontAwosome   ---->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <script src="https://kit.fontawesome.com/c9c762a273.js" crossorigin="anonymous"></script>
+  <!----  Bootstrap   ---->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="body">
+  <!--========= NavBar =========== -->
+
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md " id="navbar">
+      <a href="#" id="logoBtn" class="navbar-brand">CryptoWizz <i class="fas fa-hand-holding-usd"></i> </a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mr-auto" id="linksDiv">
+          <a href="#" class="nav-item nav-link" id="homeBtn"><i class="fas fa-home"></i> Home</a>
+          <a href="#" class="nav-item nav-link" id="liveReport"> <i class="fas fa-chart-line"></i> Live Reports </a>
+          <a href="#" class="nav-item nav-link" id="about"> <i class="fas fa-user"></i> About
+
+          </a>
+        </div>
+        <div id="searchDiv" class="navbar-right">
+          <input type="text" class="form-control ml-auto" id="searchInput" placeholder="Search for coin" />
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container main">
+    <div class="headline">
+      <h1>CryptoWizz </h1>
+    </div>
+    <hr />
+    <!-- =============== Modal============== -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">You can select maximum of 5 coins</h3>
+            <p>
+              To select <u id="wantedCoin"></u> you must <b>unselect</b> one of those coins. <br> Or continue to the
+              <b>Live Report</b> <i class="fas fa-chart-line"> .</i>
+            </p>
+          </div>
+          <div class="modal-body" id="modalBody"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="modalGoGraphBtn" data-dismiss="modal">
+              Go to live Report
+            </button>
+            <button type="button" class="btn btn-default" id="modalClearAllCoinsBtn" data-dismiss="modal">
+              Clear All Coins
+            </button>
+            <button type="button" class="btn btn-default" id="modalCloseBtn" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mainLoader" id="pageLoader"></div>
+    
+    <div id="SelectedCoinDiv" style="height: 50px">
+      <span class="selectedCoins"><b>Selected Coins:</b> <span id="selectedCoins" class=""></span></span>
+    </div>
+    <!-- <p><b><u>- Toggle at least one of the coins to watch them on 'Live Report'.</u> </b></p> -->
+    
+    <!-- Back to top button -->
+    <a id="backToTopBtn"></a>
+    
+    
+    
+    <!---------------------  About me Section ------------------->
+    <div class="container" id="aboutContainer">
+      <div id="welcomeCard">
+        <div>
+          
+          <h5 id="aboutHeadline" class="text-white">Hello :]</h5>
+          <p>
+            Welcome to <b>CryptoWizz!</b> <br />
+            Here on CryptoWizz you will be able to find all the Crypto Coins in the world. You can watch and compare their
+            values in live graph! <br />
+            By pressing the <b>'Show Info'</b> button which located in each of the currency card, you can see the current
+            value of the specific currency in comparison to USD, EUR & ILS. <br>
+            By using the <b>'Live Report'</b> feature you can see the current status of the currency in compare to USD value. <br>
+            The
+            data updates every two seconds and is shown on a live graph. <br>
+            In order to choose the specific currency for the 'Report' feature, you must to choose one of the coins by
+            toggle them on.
+          </p>
+        </div>
+        <div class="row">
+
+          <div class="col-sm-6">
+            <h5 id="aboutHeadline" class="text-white">Little about me : </h5>
+            <p>
+              My name is Bar James, 24 years old from Israel. <br>
+              And am a Full Stack Web Development student at Jhon Bryce. <br>
+              CryptoWizz is my 2nd project, where i show a using of the next features:
+            <ul>
+              <li>HTML</li>
+              <li>CSS3 </li>
+              <li>JAVASCRIPT </li>
+              <li>JQUERY </li>
+              <li>AJAX </li>
+              <li>REST </li>
+              <li>API </li>
+              <li>BOOTSTRAP </li>
+            </ul>
+            <div class="socialDiv col-sm-12">
+              <span><b>Feel free to contact me with one of these social networks:</b><span> <span class="socialIcons">
+                    <ul>
+                      <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                      <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                    </ul>
+                  </span>
+            </div>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <span id="selfImg"><img src="./Photos/Self Image.jpg" height="250px" alt="mySelf-pic"
+                style="border-radius: 200px; "></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="coinsContainer"></div>
+    <div id="chartContainer"></div>
+  </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

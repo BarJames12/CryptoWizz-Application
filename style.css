@@ -1,0 +1,504 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Fredoka+One&family=Pangolin&family=Stint+Ultra+Condensed&display=swap");
+/*------------------------ Globals ---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-image: url(./Photos/white\ ball.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: none;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01203bb0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+#coinsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul {
+  /* list-style-type: none; */
+  width: fit-content;
+  align-self: center;
+  padding-left: 40px;
+}
+
+/* ====================================  NavBar style ====================================*/
+#navbar {
+  display: flex;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  height: auto;
+  background-color: #012a4ec0;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  backdrop-filter: blur(3px);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  border-radius: 10px;
+  margin-left: 15px;
+}
+.nav-link:hover {
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#logoBtn {
+  font-size: 20px;
+  font-family: "Fredoka One", cursive;
+  color: white;
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+
+/* ==================================== HeadLine  ===================================*/
+.headline {
+  display: flex;
+  margin-top: 8vh;
+  flex-direction: column;
+  align-items: center;
+}
+.headline > h1 {
+  font-size: 70px;
+  font-family: "Fredoka One", cursive;
+  color: #fafafabb;
+  -webkit-text-stroke: 2px #012a4efb;
+  text-shadow: 1px 1px 1px #919191, 1px 2px 1px #919191, 1px 3px 1px #919191, 1px 4px 1px #919191, 1px 5px 1px #919191,
+    1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191, 1px 9px 1px #919191, 1px 10px 1px #919191,
+    1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+.selectedCoins {
+  color: #012a4ec0;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+/* ================================= Coins card style  ===================================*/
+.col-sm-3 {
+  max-width: none;
+}
+.toggleDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+.card {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 10px;
+  background-color: #02345fca;
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  backdrop-filter: blur(3px);
+  transition: 0.5s;
+}
+.card:hover {
+  background-color: #01203ba4;
+  transition: 0.5;
+}
+.coinsImg {
+  align-self: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+.card .card.card-body {
+  font-size: 15px;
+  background-color: #01203b38;
+  box-shadow: 3px 3px rgba(83, 82, 82, 0.281);
+}
+
+.btn {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #01203b7a;
+}
+
+.btn:focus,
+.btn:active {
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #012a4ec0;
+}
+
+.moreinfo {
+  text-align: center;
+}
+
+/* ==================================  Slider style ==================================*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f2b508;
+}
+input:checked + .slider:hover {
+  background-color: #a37c0f;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #f2b508;
+  box-shadow: 0 0 1px #f2b508;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ======================================== Modal style ==========================================*/
+.modal {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.438);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  padding-top: 200px;
+  font-size: 18px;
+}
+
+.modal-dialog {
+  pointer-events: fill;
+}
+
+.modal-content {
+  border: none;
+}
+.modal-header {
+  flex-direction: column;
+  background-color: #01203bab;
+  color: white;
+}
+.modal-footer {
+  background-color: #01203bab;
+  color: white;
+}
+a.close-modal {
+  visibility: hidden;
+}
+#modalCard {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100px;
+  height: 60px;
+  min-width: none;
+}
+#modalCloseBtn,
+#modalClearAllCoinsBtn,
+#modalGoGraphBtn {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-color: #01203b7a;
+  border: white 2px solid;
+}
+#modalCloseBtn:hover,
+#modalClearAllCoinsBtn:hover,
+#modalGoGraphBtn:hover {
+  background-color: white;
+  color: #012a4ec0;
+  border: #012a4ec0 2px solid;
+}
+#modalGoGraphBtn {
+  margin-right: auto;
+}
+
+/* ========================================= Loaders ======================================*/
+.mainLoader {
+  animation: spin 1s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #f2b508;
+  border-top-color: #f2b508;
+  box-sizing: border-box;
+  height: 10vmin;
+  left: calc(50% - 10vmin);
+  position: fixed;
+  top: calc(50% - 10vmin);
+  width: 10vmin;
+  z-index: 1;
+}
+.mainLoader:before {
+  animation: spin 2s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #eec453;
+  border-top-color: #eec453;
+  box-sizing: border-box;
+  content: "";
+  height: 6vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 6vmin;
+}
+.mainLoader:after {
+  animation: spin 3s infinite linear;
+  border: solid 1vmin transparent;
+  border-radius: 50%;
+  border-right-color: #ffebb2;
+  border-top-color: #ffebb2;
+  box-sizing: border-box;
+  content: "";
+  height: 0.2px;
+  left: 2vmin;
+  position: absolute;
+  top: 2vmin;
+  width: 0.2px;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#showInfoLoader {
+  color: #f2b508 !important ;
+}
+
+/* ===================================== Back to top Button =====================================*/
+#backToTopBtn {
+  display: inline-block;
+  background-color: #f2b508;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#backToTopBtn::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#backToTopBtn:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#backToTopBtn:active {
+  background-color: #555;
+}
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ====================================== About me section ======================================*/
+
+#aboutContainer {
+  display: none;
+}
+
+#welcomeCard {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 30px 0px 30px;
+  background-color: #4b84b662;
+  color: rgb(19, 3, 3);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  font-size: 20px;
+}
+
+#aboutHeadline {
+  font-size: 35px;
+  font-family: "wellux";
+  font-weight: 700;
+}
+
+#selfImg {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+@font-face {
+  font-family: "wellux";
+  src: url(./Fonts/welluxx-font/WelluxxDemo-5109G.ttf);
+}
+
+/*---------- social Share buttons ---------*/
+
+/* .socialDiv {
+  margin-left: 100px;
+} */
+
+.socialIcons > ul {
+  display: flex;
+  margin-left: 270px;
+}
+
+.socialIcons > ul li {
+  list-style: none;
+  z-index: 99;
+}
+
+.socialIcons > ul li a {
+  /* position: relative; */
+  width: 60px;
+  height: 60px;
+  display: block;
+  text-align: center;
+  margin: 0 10px;
+  border-radius: 50%;
+  padding: 6px;
+  box-sizing: border-box;
+  text-decoration: none;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(0deg, #ddd, #fff);
+  transition: 0.5s;
+}
+
+.socialIcons > ul li a:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.socialIcons > ul li a .fab {
+  display: block;
+  background: linear-gradient(0deg, #fff, #ddd);
+  border-radius: 50%;
+  line-height: calc(60px - 12px);
+  font-size: 24px;
+  color: #262626;
+  transition: 0.5s;
+}
+
+ul li:nth-child(1) a:hover .fab {
+  color: #3b5998;
+}
+
+ul li:nth-child(2) a:hover .fab {
+  color: #e4405f;
+}
+ul li:nth-child(3) a:hover .fab {
+  color: #7c33b8;
+}
+
+ul li:nth-child(4) a:hover .fab {
+  color: #007bb6;
+}
+
+/* ---------------------  Media Queries ------------------*/
+@media screen and (max-width: 1000px) {
+  .socialIcons > ul {
+    display: flex;
+    margin-left: 0px;
+    padding: 0px;
+  }
+  .headline > h1 {
+    font-size: 50px;
+  }
+  #selfImg {
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .socialIcons > ul {
+    display: flex;
+    margin-left: 0px;
+    flex-direction: column;
+  }
+}
