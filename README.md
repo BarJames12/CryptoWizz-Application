@@ -1,4 +1,7 @@
-# CryptoWizz-Application-
+
+# CryptoWizz App-
+![Screenshot 2021-12-26 125426](https://user-images.githubusercontent.com/84085280/147405930-356e01f0-86ee-4b62-8137-a80158c79fad.png)
+
 
 On CryptoWizz you will be able to find all the Crypto Coins in the world. You can watch and compare their values in live graph!
 By pressing the 'Show Info' button which located in each of the currency card, you can see the current value of the specific currency in comparison to USD, EUR & ILS.
