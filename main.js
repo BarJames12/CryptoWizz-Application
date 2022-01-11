@@ -504,18 +504,5 @@ btn.on("click", function (e) {
 });
 
 
-// SOCIAL SECTION
-function linkedin() {
-  $("#linkedin").click(() => {
-    window.open("https://linkedin.com/in/bar-james", "_blank");
-  });
-}
-linkedin();
 
-function gitHub() {
-  $("#gitHub").click(() => {
-    window.open("https://github.com/BarJames12", "_blank");
-  });
-}
-gitHub();
 
