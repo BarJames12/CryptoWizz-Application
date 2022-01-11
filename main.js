@@ -507,7 +507,7 @@ btn.on("click", function (e) {
 // SOCIAL SECTION
 function linkedin() {
   $("#linkedin").click(() => {
-    window.open("https://linkedin.com/in/bar-james", "_blank");
+    window.open("https://github.com/BarJames12", "_blank");
   });
 }
 linkedin();
