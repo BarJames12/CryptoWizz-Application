@@ -1,6 +1,7 @@
 
 # CryptoWizz App-
-![Screenshot 2021-12-26 125426](https://user-images.githubusercontent.com/84085280/147405930-356e01f0-86ee-4b62-8137-a80158c79fad.png)
+<!-- ![Screenshot 2021-12-26 125426](https://user-images.githubusercontent.com/84085280/147405930-356e01f0-86ee-4b62-8137-a80158c79fad.png) -->
+![CryptoWizz-gif](https://user-images.githubusercontent.com/84085280/174051880-54cd6dfd-518e-4b13-b912-c758e2e07d3d.gif)
 
 
 On CryptoWizz you will be able to find all the Crypto Coins in the world. You can watch and compare their values in live graph!
